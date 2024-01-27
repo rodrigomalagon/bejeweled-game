@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bejeweled simulation</title>
+        <link rel="stylesheet" href="css/game_style.css">
+    </head>
+    <body>
+        <h1 id="Title" class="primary box">Bejeweled</h1>
+        <div id="menuSection" class="hidden">
+            <section class="secondary box">
+                <p class="center">Game settings</p>
+                <p>Select the number of rows and columns that you desire for the game.</p>
+                <form id="Form">
+                    Amount of rows <br>
+                    <input id="numRowsID" type="number" onfocusout="focusFunction(event)"></input> <br><br>   
+                    Amount of columns <br>
+                    <input id="numColumnsID" type="number" onfocusout="focusFunction(event)"></input> <br><br>
+                    <div class="center">
+                        <input id="playButtonID" type="button" class="center" value="Play!" onclick="playNewGame(event)">
+                    </div><br>
+
+                </form>
+            </section><br>
+
+            <section class="secondary box">
+                <p class="center">Sound controls</p>
+                <div class="grid-container">
+                    <div class="primary box">
+                        <div class="center">
+                            <p>Music</p>
+                            <input type="image" src="images/sound-on.png" onclick="muteUnmuteMusic(event)">
+                        </div>
+                    </div>
+                    <div class="primary box">
+                        <div class="center">
+                            <p class="center">Effects</p>
+                            <input type="image" src="images/sound-on.png" class="center" onclick="muteUnmuteEffect(event)">
+                        </div>
+                    </div>
+                </div>
+            </section><br>
+
+            <section class="secondary box">
+                <p>Score: <span id="score">-</span></p>
+                <p>Turns left: <span id="turnsLeft">-</span></p><br>
+                <div id="goHomeID" class="hidden"><input type="button" value="Home" onclick="goHome()"></div>  
+            </section>
+        </div>
+        <div id="gameSection">
+                <section id="WelcomeSection" class="hidden">
+                    <h2>
+                        Welcome to the game!
+                    </h2>
+                    <p>
+                        The artwork of this simulation is inspired by the boardgame <span class="highlight">Splendor<sup>©</sup></span>, in which
+                        the players transform into <span class="stress">Renaissance merchants</span> racing to grab gems to gain the favor of the nobility.
+                        Let's begin this epic journey and find some jewels on our way!
+                    </p><br><br>
+                </section>
+                <section id="Instructions" class="hidden">
+                    <h2>
+                        Instructions
+                    </h2>
+                    <p>
+                        As in the classic Bejeweled game, in each turn you can <span class="stress">click</span> a jewel to grab it and take it with you, together with 
+                        its equal neighboring jewels (upp, down, left, or right).<br><br>
+                        For each space left by the eliminated jewels, the upper ones will <span class="stress">fall down</span> to replace them.
+                        If you collect 4 jewels in a turn, you gain an <span class="stress"> extra turn</span>!
+                        You can <span class="stress">hover</span> the collection of jewels to identify the groups that you can take for each possible selection. Good luck!
+                    </p><br><br>
+                </section>
+                <div class="center">
+                    <img src="images/jeweler.jpg" id='jeweler'>
+                </div><br><br>
+                <div class="center">
+                    <input type="button" value="Start game" onclick="startGame(event)">
+                </div>
+                <div id="startControlsID" class="hidden"><input type="button" value="View controls" onclick="startControls(event)"></div> 
+                <section id="footerSection" class="center box">
+                    <p>Credit for the images: <a href="https://www.spacecowboys.fr/">Space Cowboys ©</a></p>
+                    <p>Credit for the music: <a href="https://www.alia-vox.com/alia-vox/">Alia Vox ©</a></p>
+                </section>
+        </div>
+        <script src="game_functionality.js"></script>
+    </body>
+</html>
